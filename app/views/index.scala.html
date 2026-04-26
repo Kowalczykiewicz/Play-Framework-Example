@@ -1,0 +1,27 @@
+@(history: List[models.Conversion])
+<form action="/convert" method="POST">
+    <input type="number" step="0.01" name="amount" placeholder="Amount in USD" />
+
+    <select name="target">
+        <option value="EUR">EUR</option>
+        <option value="PLN">PLN</option>
+        <option value="GBP">GBP</option>
+    </select>
+
+    <button type="submit">Convert</button>
+</form>
+
+<table>
+    <tr>
+        <th>Amount (USD)</th>
+        <th>Target</th>
+        <th>Result</th>
+    </tr>
+    @for(h <- history) {
+    <tr>
+        <td>@h.amount</td>
+        <td>@h.target</td>
+        <td>@h.result</td>
+    </tr>
+    }
+</table>
