@@ -6,7 +6,6 @@ import repository.Repository
 
 import javax.inject._
 import scala.concurrent.ExecutionContext
-import scala.util.Random
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
